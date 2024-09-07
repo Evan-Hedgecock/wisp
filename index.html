@@ -44,86 +44,79 @@
             <input type="text" name="interest" id="interest" class="textbox" placeholder="Interest">
             <input type="text" name="minimum-payment" id="minimum-payment" class="textbox" placeholder="Minimum payment">
             <div class="button-container">
-                <button type="reset">Reset</button>
-                <button type="submit">Save Loan</button>
+                <button type="reset"><p>Reset</p></button>
+                <button type="submit"><p>Save Loan</p></button>
             </div>
         </form>
     </div>
 
     <div class="main">
+        <div class="progress-container">
+            <div class="progress-bar" id="tableScrollBar"></div>
+        </div>
         <div class="overflow-table-container">    
             <table class="table-large">
-                <thead>
-                    <tr class="header-row">
-                        <th class="heading"><h2>Loan</h2></th>
-                        <th class="heading"><h2>Balance</h2></th>
-                        <th class="heading"><h2>Interest</h2></th>
-                        <th class="heading"><h2>Payment</h2></th>
-                        <th class="button-container"><button><?xml version="1.0" ?><svg enable-background="new 0 0 32 32" id="Editable-line" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="  M3.241,7.646L13,19v9l6-4v-5l9.759-11.354C29.315,6.996,28.848,6,27.986,6H4.014C3.152,6,2.685,6.996,3.241,7.646z" fill="none" id="XMLID_6_" stroke="#E3E3E3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></svg></button></th>
-                    </tr>
-                </thead>
-                <tr class="row">
-                    <td class="data"><h3>Fall 2</h3></td>
-                    <td class="data"><h3>$8,200</h3></td>
-                    <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
-                 </tr>
-                <tr class="row">
-                    <td class="data"><h3>Fall 2</h3></td>
-                    <td class="data"><h3>$8,200</h3></td>
-                    <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                <tr class="header-row">
+                    <th class="heading"><h2>Loan</h2></th>
+                    <th class="heading"><h2>Balance</h2></th>
+                    <th class="heading"><h2>Interest</h2></th>
+                    <th class="heading"><h2>Payment</h2></th>
+                    <!-- <th class="button-container"><button><?xml version="1.0" ?><svg enable-background="new 0 0 32 32" id="Editable-line" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="  M3.241,7.646L13,19v9l6-4v-5l9.759-11.354C29.315,6.996,28.848,6,27.986,6H4.014C3.152,6,2.685,6.996,3.241,7.646z" fill="none" id="XMLID_6_" stroke="#E3E3E3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></svg></button></th> -->
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
+                
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                 </tr>
                 <tr class="row">
                     <td class="data"><h3>Fall 2</h3></td>
                     <td class="data"><h3>$8,200</h3></td>
                     <td class="data"><h3>8.650%</h3></td>
-                    <td class="data"><h3>$75.12</h3></td>
-                    <td class="button-container"><button>Edit</button></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
+                </tr>
+                <tr class="row">
+                    <td class="data"><h3>Fall 2</h3></td>
+                    <td class="data"><h3>$8,200</h3></td>
+                    <td class="data"><h3>8.650%</h3></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
+                </tr>
+                <tr class="row">
+                    <td class="data"><h3>Fall 2</h3></td>
+                    <td class="data"><h3>$8,200</h3></td>
+                    <td class="data"><h3>8.650%</h3></td>
+                    <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                 </tr>
             </table>
         </div>
