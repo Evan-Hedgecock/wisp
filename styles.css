@@ -39,7 +39,7 @@ body{
 
 
 h1 {
-  font-size: 80%;
+  font-size: 70%;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -47,7 +47,7 @@ h1 {
 }
 
 h2 {
-  font-size: 60%;
+  font-size: 50%;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -55,14 +55,14 @@ h2 {
 }
 
 h3 {
-  font-size: 45%;
+  font-size: 35%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 p {
-  font-size: 30%;
+  font-size: 25%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -397,5 +397,11 @@ button:hover {
     min-width: 9rem;
     width: 30%;
     margin: 0px 10px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  table {
+    table-layout: auto;
   }
 }
