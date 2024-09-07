@@ -1,15 +1,21 @@
-// Create loan dictionary
-// {Loan id: {Loan name: name, Loan balance: balance, Loan interest: interest, Loan payment: payment}}
+// Create loan dictionary from form entry
+function getLoan() {
+    // Get input from user
+    let fname = document.forms["addLoan"]["fname"].value, 
+    fbalance = document.forms["addLoan"]["fbalance"].value, 
+    finterest = document.forms["addLoan"]["finterest"].value, 
+    fpayment = document.forms["addLoan"]["fpayment"].value;
 
-function Loan(name, balance, interest, payment) {
-    this.name = name;
-    this.balance = balance;
-    this.interest = interest;
-    this.payment = payment;
+    const loan = {name:fname, balance:fbalance, interest:finterest, payment:fpayment};
 }
 
-// Get input from user
-let name = 
+// Insert loan into table
+// function importLoan(){
+
+// }
+
+
+
 
 
 
