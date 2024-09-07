@@ -39,16 +39,15 @@ body{
 
 
 h1 {
-  font-size: 4rem;
+  font-size: 80%;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 60%;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -56,17 +55,21 @@ h2 {
 }
 
 h3 {
-  font-size: 2.25rem;
+  font-size: 45%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 p {
-  font-size: 1.75rem;
+  font-size: 30%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+button p {
+  font-size: 100%;
 }
 
 .small-text {
@@ -76,13 +79,13 @@ p {
   font-style: normal;
 }
 
-
 .sidebar {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   height: 90vh;
+  min-height: 1000px;
   
   border-right: 1px solid transparent;
   padding: 20px;
@@ -120,6 +123,7 @@ p {
   width: 80%;
   text-align: center;
   height: 10%;
+  min-height: 60px;
 }
 
 .sidebar form {
@@ -138,6 +142,7 @@ p {
 
 .sidebar form .button-container {
   height: 10%;
+  min-height: 60px;
 }
 
 .main {
@@ -147,13 +152,8 @@ p {
   justify-content: center;
   min-width: 200px;
   height: 90vh;
-  
-  /* border-left: 1px solid transparent; */
   padding: 20px;
-  /* background-image: linear-gradient(var(--dark), var(--dark)),
-  var(--themeGradientVertical);
-  background-origin: border-box;
-  background-clip: padding-box, border-box; */
+  min-height: 1000px;
 }
 
 .footer {
@@ -212,11 +212,12 @@ button {
   font-size: 1.5rem;
   width: 100%;
   max-width: 15rem;
-  border-radius: .5dvi;
+  border-radius: 10px;
 }
 
 .textbox {
-  height: 4rem;
+  height: 4%;
+  min-height: 40px;
   border-radius: .65dvi;
   border: .15rem solid var(--white50);
   background-color: var(--dark);
@@ -229,10 +230,9 @@ button {
 
 .close-button {
   position:absolute;
-  right: 1.5vw;
-  top: 2vh;
+  right: 20px;
+  height: 32px;
   z-index: 2;
-  
 }
 
 .close-button-svg:hover {
@@ -246,10 +246,6 @@ button {
   width: 100%;
   height: 80%;
 }
-
-/* .overflow-table-container tr {
-  scroll-snap-align: start;
-} */
 
 table {
   border-collapse: collapse;
@@ -325,10 +321,12 @@ table {
   position: absolute;
   left: 91.5%;
   bottom: 57%;
-  width: 8rem;
+  width: 1%;
   height: 35%;
   min-width: 5rem;
 }
+
+
 
 button:hover {
   background-color: var(--white50);
@@ -358,7 +356,6 @@ button:hover {
   position: absolute;
   width: 100%;
   height: 3%;
-  /* background-color: red; */
   background-image: var(--fadeOutGradient);
   top: 57%;
   z-index: 1;
@@ -377,7 +374,7 @@ button:hover {
   min-height: 60px;
 }
 
-@media only screen and (max-width: 1650px) {
+@media only screen and (max-width: 1800px) {
   body {
     grid-template-columns: 100vw;
   }
