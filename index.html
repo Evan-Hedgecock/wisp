@@ -13,18 +13,18 @@
     </head>
     <body>
 
-        <div class="close-button"> 
+        <div class="close-button" id="closeButton"> 
             <!-- X -->
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_6_588)">
-            <path d="M11.3122 12.766C11.5062 12.961 11.7612 13.058 12.0162 13.058C12.2712 13.058 12.5262 12.961 12.7202 12.766C13.1092 12.377 13.1092 11.746 12.7202 11.357L4.75517 3.384C4.36617 2.995 3.73617 2.995 3.34717 3.384C2.95817 3.773 2.95817 4.404 3.34717 4.793L11.3122 12.766Z" fill="#E3E3E3"/>
-            <path d="M17.4071 16.048L28.6521 4.793C29.0411 4.404 29.0411 3.773 28.6521 3.384C28.2631 2.995 27.6331 2.823 27.2441 3.213L15.2961 15H15.0001V15.345L3.20009 27.303C2.81109 27.692 2.88509 28.323 3.27309 28.712C3.46709 28.907 3.75909 29.004 4.01409 29.004C4.26909 29.004 4.54209 28.907 4.73609 28.712L15.9901 17.458L27.2391 28.713C27.4331 28.908 27.6911 29.005 27.9451 29.005C28.1991 29.005 28.4561 28.908 28.6501 28.713C29.0391 28.324 29.0401 27.693 28.6511 27.304L17.4071 16.048Z" fill="#E3E3E3"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_6_588">
-            <rect width="32" height="32" fill="white"/>
-            </clipPath>
-            </defs>
+            <svg class="close-button-svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_588)">
+                <path d="M11.3122 12.766C11.5062 12.961 11.7612 13.058 12.0162 13.058C12.2712 13.058 12.5262 12.961 12.7202 12.766C13.1092 12.377 13.1092 11.746 12.7202 11.357L4.75517 3.384C4.36617 2.995 3.73617 2.995 3.34717 3.384C2.95817 3.773 2.95817 4.404 3.34717 4.793L11.3122 12.766Z" fill="currentColor"/>
+                <path d="M17.4071 16.048L28.6521 4.793C29.0411 4.404 29.0411 3.773 28.6521 3.384C28.2631 2.995 27.6331 2.823 27.2441 3.213L15.2961 15H15.0001V15.345L3.20009 27.303C2.81109 27.692 2.88509 28.323 3.27309 28.712C3.46709 28.907 3.75909 29.004 4.01409 29.004C4.26909 29.004 4.54209 28.907 4.73609 28.712L15.9901 17.458L27.2391 28.713C27.4331 28.908 27.6911 29.005 27.9451 29.005C28.1991 29.005 28.4561 28.908 28.6501 28.713C29.0391 28.324 29.0401 27.693 28.6511 27.304L17.4071 16.048Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_6_588">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+                </defs>
             </svg>
         </div>
 
@@ -52,11 +52,11 @@
         </div>
 
         <div class="main">
-            <div class="progress-container">
-                <div class="progress-bar" id="tableScrollBar"></div>
+            <div class="scroll-bar-container">
+                <div class="scroll-bar" id="tableScrollBar"></div>
             </div>
-            <div class="overflow-table-container">    
-                <table class="table-large">
+            <div class="overflow-table-container" id="loansLargeTable">    
+                <table class="table-large" >
                     <tr class="header-row">
                         <th class="heading"><h2>Loan</h2></th>
                         <th class="heading"><h2>Balance</h2></th>
@@ -119,8 +119,10 @@
                         <td class="data"><h3>8.650%</h3></td>
                         <td class="data"><h3>$75.12</h3><div class="button-container"><button><p>Edit</p></button></div></td>
                     </tr>
-                </table>
+                    <div class="table-fade" id="tableFade"></div>
+                </table>  
             </div>
+
             <table class="table-medium">
                 <tr class="row header-row">
                     <th class="heading"><h2>Total Balance</h2></th>
@@ -138,7 +140,7 @@
         </div>
 
         <div class="footer">
-            <div class="button-container">
+            <div class="special-button">
                 <button><h3>Done</h3></button>
             </div>
         </div>

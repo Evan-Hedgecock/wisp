@@ -1,5 +1,8 @@
 :root {
-  --dark: #0D0221;
+  --dark: #0d0221;
+  --dark80: rgba(13, 2, 33, 0.8);
+  --dark50: rgba(13, 2, 33, 0.5);
+  --dark30: rgba(13, 2, 33, 0.3);
   --light: #FBFBF2;
   --white: #E3E3E3;
   --white80: rgba(227, 227, 227, 0.8);
@@ -13,6 +16,7 @@
   --themeGradientHorizontal50: linear-gradient(to right, rgba(246, 16, 103, 0.5), rgba(101, 100, 219, 0.5));
   --themeGradientHorizontal50Repeat: linear-gradient(to right, rgba(246, 16, 103, 0.5), rgba(101, 100, 219, 0.5)), linear-gradient(to right, rgba(246, 16, 103, 0.5), rgba(101, 100, 219, 0.5));
 
+  --fadeOutGradient: linear-gradient(to bottom, #0d022100, var(--dark30), var(--dark50), var(--dark80), var(--dark));
 }
 
 * {
@@ -168,16 +172,6 @@ p {
   background-clip: padding-box, border-box;
 }
 
-.footer .button-container {
-  height: 80%;
-  min-height: 3rem;
-  align-items: center;
-  justify-content: center;
-  margin-right: 2.5rem;
-  width: fit-content;
-}
-
-
 .seperator {
   width: 100%;
   border: 2px solid transparent;
@@ -238,13 +232,24 @@ button {
   right: 1.5vw;
   top: 2vh;
   z-index: 2;
+  
+}
+
+.close-button-svg:hover {
+  color: #F61067;
 }
 
 .overflow-table-container {
   overflow-x: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
   width: 100%;
   height: 80%;
 }
+
+/* .overflow-table-container tr {
+  scroll-snap-align: start;
+} */
 
 table {
   border-collapse: collapse;
@@ -318,10 +323,10 @@ table {
 
 .row .button-container {
   position: absolute;
-  left: 108rem;
-  bottom: 2.8rem;
+  left: 91.5%;
+  bottom: 57%;
   width: 8rem;
-  height: 5rem;
+  height: 35%;
   min-width: 5rem;
 }
 
@@ -330,22 +335,47 @@ button:hover {
   border: none;
 }
 
-.progress-container {
-  position: relative;
-  top: 7.67rem;
+/* Scrollbar for firefox */
+.overflow-table-container{
+  scrollbar-width: auto;
+  scrollbar-color: var(--white80) var(--dark);
+}
+
+.overflow-table-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.overflow-table-container::-webkit-scrollbar-thumb {
+  background: var(--themeGradientVertical);
+  border-radius: 6px;
+}
+
+.overflow-table-container::-webkit-scrollbar-thum:hover {
+  background: #6564DB;
+}
+
+.table-fade {
+  position: absolute;
   width: 100%;
-  height: .5rem;
-  background: var(--white30);
-  z-index: 3;
+  height: 3%;
+  /* background-color: red; */
+  background-image: var(--fadeOutGradient);
+  top: 57%;
+  z-index: 1;
 }
 
-.progress-bar {
-  height: .5rem;
-  width: 10%;
+.special-button button:hover {
   background-image: var(--themeGradientHorizontal);
-  z-index: 4;
 }
 
+.special-button {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  min-width: 120px;
+  height: 70%;
+  min-height: 60px;
+}
 
 @media only screen and (max-width: 1650px) {
   body {

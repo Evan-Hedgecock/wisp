@@ -1,10 +1,15 @@
-window.onscroll = function() {scrollFunction()};
+document.getElementById("loansLargeTable").onscroll = function() {scrollFunction()};
+
+document.getElementById("closeButton").onfocus = function() {hoverFunction()};
 
 function scrollFunction() {
-    console.log("Scrolling");
 
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("tableScrollBar").style.width = scrolled + "%";
+    var tableScroll = document.getElementById("loansLargeTable").scrollTop || document.getElementById("loansLargeTable").scrollTop;
+    var height = document.getElementById("loansLargeTable").scrollHeight - document.getElementById("loansLargeTable").clientHeight;
+    var scrolled = ((tableScroll / height) * 100) * .8;
+    document.getElementById("tableScrollBar").style.top = scrolled + "%";
+}
+
+function hoverFunction() {
+    
 }
