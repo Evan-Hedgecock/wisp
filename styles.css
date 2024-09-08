@@ -253,9 +253,9 @@ table {
   width: 100%;
 }
 
-.table-large {
+/* .overflow-table-container {
   height: 80%;
-}
+} */
 
 .table-large .header-row {
   position: sticky;
@@ -374,6 +374,14 @@ button:hover {
   min-height: 60px;
 }
 
+.empty-table {
+  display: flex; 
+  align-items: end; 
+  justify-content: end; 
+  width: 55vw;
+  height:30vh;
+}
+
 @media only screen and (max-width: 1800px) {
   body {
     grid-template-columns: 100vw;
@@ -397,6 +405,11 @@ button:hover {
     min-width: 9rem;
     width: 30%;
     margin: 0px 10px;
+  }
+
+  .empty-table {
+    width: 100vw;
+    justify-content: center;
   }
 }
 
