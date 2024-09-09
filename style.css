@@ -114,9 +114,10 @@ body{
 
 .middle-container{
     display: flex;
-    gap: 10px;
+    gap: 30px;
     width: 100%;
-    padding: 5px 10px;
+    height: 640px;
+    padding: 15px 30px;
 }
 
 .middle-container .side-container{
@@ -227,6 +228,58 @@ body{
     cursor: pointer;
 }
 
+.middle-container .large-container{
+    width: 80vw;
+    background: white;
+    border-radius: 50px;
+    padding: 2px 40px 0 40px;
+}
+
+.middle-container .large-container .table-container{
+    overflow-x: auto;
+    height: 100%;
+}
+
+.middle-container .large-container .table-container table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.middle-container .large-container .table-container table tr{
+    height: 75px;
+}
+
+.middle-container .large-container .table-container table tr th{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    color: #6320EE;
+    background: white;
+    height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.middle-container .large-container .table-container table tr:nth-child(1){
+    position: sticky;
+}
+
+.middle-container .large-container .table-container table tr:nth-child(even) td{
+    color: white;
+    background: #6320EE;
+}
+
+.middle-container .large-container .table-container table tr:nth-child(even) td:nth-child(1){
+    border-radius: 50px 0 0 50px;
+}
+
+.middle-container .large-container .table-container table tr:nth-child(even) td:nth-child(4){
+    border-radius: 0 50px 50px 0;
+}
 
 
 
