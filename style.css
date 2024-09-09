@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black ;
+}
+
+a:hover{
+    color: #6320EE;
+}
+
+body{
+    background-image: linear-gradient(to right, #00F0B5, #1AC8ED);
+}
+
+.top-container{
+    background: white;
+    padding: 10px;
+}
+
+.top-container .navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-container .navbar .logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.top-container .navbar .logo:hover{
+    cursor: pointer;
+}
+
+.top-container .navbar .logo i{
+    color: white;
+    background: #6320EE;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.top-container .navbar .nav-links{
+    display: flex;
+    gap: 25px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.top-container .navbar .settings{
+    display: flex;
+    gap: 8px;
+    background: #6320EE;
+    border-radius: 50px;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.top-container .navbar .settings >i{
+    background: #6320EE;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.top-container .navbar .settings >i:hover{
+    color: #6320EE;
+    background-color: white;
+}
+
+
+.top-container .navbar .settings .profile{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #6320EE;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.top-container .navbar .settings .profile:hover{
+    background: white;
+    color: #6320EE;
+}
+
+.top-container .navbar .settings .profile:hover i{
+    color: #6320EE;
+}
+
+.top-container .navbar .settings .profile img{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.top-container .navbar .settings .profile i{
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
