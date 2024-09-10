@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+}
+
 a{
     text-decoration: none;
     color: black ;
@@ -17,6 +21,7 @@ a:hover{
 
 body{
     background-image: linear-gradient(to right, #00F0B5, #1AC8ED);
+    height: 100%;
 }
 
 .top-container{
@@ -116,7 +121,7 @@ body{
     display: flex;
     gap: 30px;
     width: 100%;
-    height: 640px;
+    height: 60%;
     padding: 15px 30px;
 }
 
@@ -203,13 +208,14 @@ body{
 
 .middle-container .side-container .additional{
     width: 100%;
-    height: 120px;
+    height: 25%;
     border: 4px solid #6320EE;
     border-radius:35px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     color: #6320EE;
+    transition: all 0.3s ease-in-out;
 }
 
 .middle-container .side-container .additional h4{
@@ -227,6 +233,7 @@ body{
     color: white;
     background: #6320EE;
     cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.459);
 }
 
 .middle-container .large-container{
@@ -243,14 +250,14 @@ body{
 
 .middle-container .large-container .table-container table{
     width: 100%;
-    height: 100%;
+    height: %;
     text-align: center;
     border-collapse: collapse;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
 
-.middle-container .large-container .table-container table tr{
+.middle-container .large-container .table-container table tr td{
     height: 75px;
 }
 
@@ -259,7 +266,7 @@ body{
     font-size: 18px;
     color: #6320EE;
     background: white;
-    height: 90px;
+    height: 100px;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -282,5 +289,124 @@ body{
     border-radius: 0 50px 50px 0;
 }
 
+
+.bottom-container{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 20px 30px;
+    justify-content: space-between;
+}
+
+.bottom-container .left-container,
+.bottom-container .right-container{
+    background: white;
+    height: 100%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bottom-container .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+
+.bottom-container .title h4{
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #6320EE;
+    
+}
+
+.bottom-container form{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 40px;
+}
+
+.bottom-container form .top,
+.bottom-container form .bottom{
+    display: flex;
+    gap: 20px;
+}
+
+.bottom-container form .top input,
+.bottom-container form .bottom input{
+    background: #6320EE;
+    border: 1px solid #6320EE;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 430px;
+    height: 60px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+.bottom-container form .top input:focus,
+.bottom-container form .bottom input:focus{
+    background: none;
+    color: #6320EE;
+}
+
+.bottom-container form .top input::placeholder,
+.bottom-container form .bottom input::placeholder{
+    opacity: 1;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+
+.bottom-container form .button{
+    width: 175px;
+    height: 55px;
+    background: none;
+    border: 4px solid #6320EE;
+    border-radius: 50px;
+    color: #6320EE;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    transition: all 0.3s ease-in-out;
+}
+
+.bottom-container form .button:hover{
+    cursor: pointer;
+    color: white;
+    background: #6320EE;
+    width: 200px;
+}
+
+.bottom-container .middle-container{
+    height: 60%;
+    border: 4px solid #6320EE;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #6320EE;
+    font-size: 32px;
+    transition: all 0.3s ease-in-out;
+}
+
+.bottom-container .middle-container:hover{
+    cursor: pointer;
+    height: 80%;
+    background: #6320EE;
+    color: white;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.527);
+}
 
 
