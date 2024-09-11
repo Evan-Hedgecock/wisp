@@ -46,7 +46,11 @@ function addLoan(event){
     saveToLocal(newLoan, "loans");
 }
 
+
+// Function to verify correct input to forms
+// For every form entry, get the assigned class and make sure the input value is of that type
+
+
 // On screen refresh load list from memory
 onload = loans = loadFromLocal("loans");
 loans ? createTable(loans, "#loanTable") : console.log("No loans to load");
-;
