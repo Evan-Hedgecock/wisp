@@ -19,7 +19,7 @@ function loadFromLocal(key){
 
 // Creates a table from data structed as an array of objects
 function createTable(data, tableID){
-    table = document.querySelector(tableID);
+    let table = document.querySelector(tableID);
     
     data.forEach(loan => {
         // Create a row for every object
@@ -37,20 +37,56 @@ function createTable(data, tableID){
 }
 
 function addLoan(event){
+    let errors = []
+    let elements = []
     fname = this.fname.value;
-    fbalance = this.fbalance.value;
+    fbalance = Number(this.fbalance.value);
     finterest = this.finterest.value;
     fpayment = this.fpayment.value;
+    
+
+    // These should gather error messages and elements to display an error to, in the errors and elements array
+    if (isNaN(fbalance)) {
+        errors.push("Balance should be a number")
+        element = document.getElementById("fbalance")
+        elements.push(element)
+    }
+
+    if (isNaN(finterest)) {
+        errors.push("Interest should be a number")
+        element = document.getElementById("finterest")
+        elements.push(element)
+    }
+
+    if (isNaN(fpayment)) {
+        errors.push("Payment should be a number")
+        element = document.getElementById("fpayment")
+        elements.push(element)
+    }
+    
+    // And then if there were errors, call inputErrors to display them and don't let user input create a new loan
+    if (errors.length > 0) {
+        inputErrors(errors, elements)
+        return 0
+    }    
+
     const newLoan = {"name": fname, "balance": fbalance, "interest": finterest, "payment": fpayment};
     
     saveToLocal(newLoan, "loans");
 }
 
-
-// Function to verify correct input to forms
-// For every form entry, get the assigned class and make sure the input value is of that type
+// This function should display error messages above the element provided
+function inputErrors(errors, elements){
+    for (let i = 0; i < errors.length; i++) {
+        const errorMessage = document.createTextNode(errors[i])
+        let errorContainer = document.createElement("span")
+        errorContainer.appendChild(errorMessage)
+        elements[i].appendChild(errorContainer)
+    }
+}
 
 
 // On screen refresh load list from memory
 onload = loans = loadFromLocal("loans");
+// onload = localStorage.clear()
 loans ? createTable(loans, "#loanTable") : console.log("No loans to load");

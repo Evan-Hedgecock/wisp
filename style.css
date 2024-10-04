@@ -42,7 +42,7 @@ body{
     align-items: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 32px;
 }
 
 .top-container .navbar .logo:hover{
@@ -61,12 +61,12 @@ body{
     gap: 25px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .top-container .navbar .settings{
     display: flex;
-    gap: 8px;
+    gap: 20px;
     background: #6320EE;
     border-radius: 50px;
     align-items: center;
@@ -79,7 +79,7 @@ body{
     padding: 5px;
     border-radius: 50%;
     color: white;
-    font-size: 16px;
+    font-size: 28px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -110,14 +110,14 @@ body{
 }
 
 .top-container .navbar .settings .profile img{
-    height: 32px;
-    width: 32px;
+    height:50px;
+    width: 50px;
     border-radius: 50%;
 }
 
 .top-container .navbar .settings .profile i{
     color: white;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 
@@ -170,13 +170,13 @@ body{
 
 .middle-container .side-container .content .header h3{
     color: #6320EE;
-    font-size: 30px;
+    font-size: 42px;
     font-weight: 300;
 }
 
 .middle-container .side-container .content .header p{
     font-family: "Roboto", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .middle-container .side-container .content .middle{
@@ -185,7 +185,7 @@ body{
     justify-content: space-between;
     /* height: 40%; */
     /* padding: 20px 10px; */
-    font-size: 20px;
+    font-size: 24px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
@@ -194,8 +194,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    gap: 80%;
     height: 100%;
-    gap: 30px;
     padding: 15px 20px;
 }
 
@@ -212,7 +213,7 @@ body{
     border-radius: 50px;
     position: relative;
     top: 4px;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .middle-container .side-container .additional{
@@ -228,14 +229,14 @@ body{
 }
 
 .middle-container .side-container .additional h4{
-    font-size: 24px;
+    font-size: 32px;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
 }
 
 .middle-container .side-container .additional i{
-    font-size: 48px;
+    font-size: 56px;
 }
 
 .middle-container .side-container .additional:hover{
@@ -271,11 +272,14 @@ body{
 
 .middle-container .large-container .table-container table tr td{
     height: 75px;
+    font-size: 22px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
 }
 
 .middle-container .large-container .table-container table tr th{
     font-family: "Montserrat", sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     color: #6320EE;
     background: white;
     height: 100px;
