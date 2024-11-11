@@ -362,7 +362,6 @@ body{
 .bottom-container form .bottom{
     display: flex;
     gap: 20px;
-    width: 100%;
 }
 
 .bottom-container form .top input,
@@ -485,6 +484,7 @@ body{
 
     .middle-container .side-container .content .middle .left,
     .middle-container .side-container .content .middle .right{
+        gap: 0%;
         width: 100%;
         flex-direction: row;
         align-items: center;

@@ -19,7 +19,7 @@ function loadFromLocal(key){
 
 // Creates a table from data structed as an array of objects
 function createTable(data, tableID){
-    let table = document.querySelector(tableID);
+    const table = document.querySelector(tableID);
     
     data.forEach(loan => {
         // Create a row for every object
@@ -37,56 +37,65 @@ function createTable(data, tableID){
 }
 
 function addLoan(event){
-    let errors = []
-    let elements = []
+    const errors = []
+    const elements = []
     fname = this.fname.value;
     fbalance = Number(this.fbalance.value);
     finterest = this.finterest.value;
     fpayment = this.fpayment.value;
-    
-
     // These should gather error messages and elements to display an error to, in the errors and elements array
-    if (isNaN(fbalance)) {
-        errors.push("Balance should be a number")
-        element = document.getElementById("fbalance")
-        elements.push(element)
+
+    if (fname === "") {
+        errors.push("Name missing");
+        elements.push(document.getElementById("fname-container"));
     }
 
-    if (isNaN(finterest)) {
-        errors.push("Interest should be a number")
-        element = document.getElementById("finterest")
-        elements.push(element)
+    if (fbalance === 0) {
+        console.log("Balance error");
+        errors.push("Balance should be a number");
+        element = document.getElementById("fbalance-container");
+        elements.push(element);
+    }
+    
+    if (finterest === "") {
+        console.log("Interest error");
+        errors.push("Interest should be a number");
+        element = document.getElementById("finterest-container");
+        elements.push(element);
     }
 
-    if (isNaN(fpayment)) {
-        errors.push("Payment should be a number")
-        element = document.getElementById("fpayment")
-        elements.push(element)
+    if (fpayment === "") {
+        console.log("Payment error");
+        errors.push("Payment should be a number");
+        element = document.getElementById("fpayment-container");
+        elements.push(element);
     }
     
     // And then if there were errors, call inputErrors to display them and don't let user input create a new loan
     if (errors.length > 0) {
-        inputErrors(errors, elements)
-        return 0
-    }    
-
-    const newLoan = {"name": fname, "balance": fbalance, "interest": finterest, "payment": fpayment};
-    
-    saveToLocal(newLoan, "loans");
+        inputErrors(errors, elements);
+        return 1;
+    } else {
+        console.log("adding loan");
+        const newLoan = {"name": fname, "balance": fbalance, "interest": finterest, "payment": fpayment};
+        saveToLocal(newLoan, "loans");
+    } 
 }
 
 // This function should display error messages above the element provided
 function inputErrors(errors, elements){
     for (let i = 0; i < errors.length; i++) {
-        const errorMessage = document.createTextNode(errors[i])
-        let errorContainer = document.createElement("span")
-        errorContainer.appendChild(errorMessage)
-        elements[i].appendChild(errorContainer)
+        const errorMessage = document.createTextNode(errors[i]);
+        const errorContainer = document.createElement("span");
+        errorContainer.style.color = "red";
+
+        errorContainer.appendChild(errorMessage);
+        elements[i].appendChild(errorContainer);
     }
 }
 
-
 // On screen refresh load list from memory
 onload = loans = loadFromLocal("loans");
-// onload = localStorage.clear()
+// Uncomment this line to clear loans from local memory
+// onload = localStorage.clear();
 loans ? createTable(loans, "#loanTable") : console.log("No loans to load");

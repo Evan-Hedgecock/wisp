@@ -89,12 +89,20 @@
             </div>
             <form action="#" onsubmit="addLoan(event)" id="addLoanForm">
                 <div class="top">
-                    <input type="text" name="fname" id="fname" placeholder="Name">
-                    <input type="text" name="fbalance" id="fbalance" placeholder="Balance">
+                    <div id="fname-container">
+                        <input type="text" name="fname" id="fname" placeholder="Name">
+                    </div>
+                    <div id="fbalance-container">
+                        <input type="text" name="fbalance" id="fbalance" placeholder="Balance">
+                    </div>
                 </div>
                 <div class="bottom">
-                    <input type="text" name="finterest" id="finterest" placeholder="Interest">
-                    <input type="text" name="fpayment" id="fpayment" placeholder="Payment">
+                    <div id="finterest-container">
+                        <input type="text" name="finterest" id="finterest" placeholder="Interest">
+                    </div>
+                    <div id="fpayment-container">
+                        <input type="text" name="fpayment" id="fpayment" placeholder="Payment">
+                    </div>
                 </div>
                 <input class="button" type="submit" value="CONFIRM">
             </form>
