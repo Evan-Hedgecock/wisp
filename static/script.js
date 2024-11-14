@@ -1,3 +1,6 @@
+const { LocalStorage } = require('node-localstorage');
+const localStorage = new LocalStorage('./storage');
+
 // Save to memory
 function saveToLocal(data, key){    
     currentData = loadFromLocal(key);
@@ -13,8 +16,10 @@ function saveToLocal(data, key){
 
 // Load from memory
 function loadFromLocal(key){
-    data = localStorage.getItem(key);    
-    return JSON.parse(data);
+    if (localStorage) {
+        data = localStorage.getItem(key);    
+        return JSON.parse(data);
+    }
 }
 
 // Creates a table from data structed as an array of objects

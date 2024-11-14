@@ -1,0 +1,15 @@
+{
+  "name": "wisp",
+  "version": "1.0.0",
+  "description": "Loan management app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Evan Hedgecock",
+  "license": "ISC",
+  "dependencies": {
+    "node-localstorage": "^3.0.5"
+  }
+}
