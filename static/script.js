@@ -1,23 +1,20 @@
-const { LocalStorage } = require('node-localstorage');
-const localStorage = new LocalStorage('./storage');
-
 // Save to memory
-function saveToLocal(data, key){    
+function saveToLocal(data, key){
     currentData = loadFromLocal(key);
-    
+
     // If current data exists, add data to that list, otherwise create empty array
     currentData ? currentData.push(data) : currentData = [data];
     console.log("current data:", currentData);
     stringData = JSON.stringify(currentData);
     console.log("string data:", stringData);
-    
+
     localStorage.setItem(key, stringData);
 }
 
 // Load from memory
 function loadFromLocal(key){
     if (localStorage) {
-        data = localStorage.getItem(key);    
+        data = localStorage.getItem(key);
         return JSON.parse(data);
     }
 }
@@ -25,7 +22,7 @@ function loadFromLocal(key){
 // Creates a table from data structed as an array of objects
 function createTable(data, tableID){
     const table = document.querySelector(tableID);
-    
+
     data.forEach(loan => {
         // Create a row for every object
         row = document.createElement("tr");
@@ -38,7 +35,7 @@ function createTable(data, tableID){
             row.appendChild(cell);
         });
         table.appendChild(row);
-    });    
+    });
 }
 
 function addLoan(event){
@@ -61,7 +58,7 @@ function addLoan(event){
         element = document.getElementById("fbalance-container");
         elements.push(element);
     }
-    
+
     if (finterest === "") {
         console.log("Interest error");
         errors.push("Interest should be a number");
@@ -75,7 +72,7 @@ function addLoan(event){
         element = document.getElementById("fpayment-container");
         elements.push(element);
     }
-    
+
     // And then if there were errors, call inputErrors to display them and don't let user input create a new loan
     if (errors.length > 0) {
         inputErrors(errors, elements);
@@ -84,7 +81,7 @@ function addLoan(event){
         console.log("adding loan");
         const newLoan = {"name": fname, "balance": fbalance, "interest": finterest, "payment": fpayment};
         saveToLocal(newLoan, "loans");
-    } 
+    }
 }
 
 // This function should display error messages above the element provided

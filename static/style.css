@@ -71,7 +71,7 @@ body{
     border-radius: 50px;
     align-items: center;
     padding: 5px 10px;
-    
+
 }
 
 .top-container .navbar .settings >i{
@@ -149,7 +149,7 @@ body{
     /* padding: 10px; */
     border-radius: 50px;
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.356);
-    
+
 }
 
 .middle-container .side-container .content .header{
@@ -491,7 +491,7 @@ body{
         justify-content: space-around;
     }
 
-    
+
 
     .middle-container .side-container .content .main{
         height: 100%;
@@ -513,7 +513,7 @@ body{
     .middle-container{
         height: auto;
     }
-    
+
     .bottom-container{
         flex-flow: row wrap;
         height: auto;

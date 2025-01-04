@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisp</title>
+
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="top-container">
+            <div class="navbar">
+                <div class="logo">
+                    <i class='bx bxs-leaf'></i>
+                    <a>Evan's Loan App</a>
+                </div>
+                <div class="nav">
+                    <div class="nav-links">
+                        <a href="#">Home</a>
+                        <!-- <a href="#">Loans</a>
+                        <a href="#">Budget</a> -->
+                    </div>
+                </div>
+                <div class="settings">
+                    <i class='bx bxs-bell'></i>
+                    <i class='bx bxs-cog' ></i>
+                    <div class="profile">
+                        <img src="{{ url_for('static', filename='assets/profile.png') }}" alt="profile photo">
+                        <i class='bx bx-chevron-down' ></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle-container">
+            {% block middle %}
+            {% endblock %}
+        </div>
+        <div class="bottom-container">
+            {% block bottom %}
+            {% endblock %}
+        </div>
+        <script src="/static/script.js"></script>
+    </body>
+</html>
