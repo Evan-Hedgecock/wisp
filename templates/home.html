@@ -34,7 +34,7 @@
             <th>Loan</th>
             <th>Balance</th>
             <th>Interest</th>
-            <th>Payment</th>
+            <th>Percent</th>
         </tr>
     </table>
     </div>
@@ -45,7 +45,7 @@
     <div class="title">
         <h4>Add Loan</h4>
     </div>
-    <form action="#" onsubmit="addLoan(event)" id="addLoanForm">
+    <form action="/add-loan" method="post" id="addLoanForm">
         <div class="top">
             <div id="fname-container">
                 <input type="text" name="fname" id="fname" placeholder="Name">
@@ -58,8 +58,8 @@
             <div id="finterest-container">
                 <input type="text" name="finterest" id="finterest" placeholder="Interest">
             </div>
-            <div id="fpayment-container">
-                <input type="text" name="fpayment" id="fpayment" placeholder="Payment">
+            <div id="fpercent-container">
+                <input type="text" name="fpercent" id="fpercent" placeholder="Payment">
             </div>
         </div>
         <input class="button" type="submit" value="CONFIRM">
