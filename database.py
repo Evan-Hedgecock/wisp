@@ -42,3 +42,11 @@ class Database:
             data,
         )
         con.commit()
+
+    def get(self):
+        """Get all loan records from the database."""
+        print("Geting loans from database")
+        con = sqlite3.connect("loans.db")
+        cur = con.cursor()
+        res = cur.execute("SELECT * FROM loans")
+        return res.fetchall()

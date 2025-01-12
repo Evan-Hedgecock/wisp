@@ -21,12 +21,14 @@
 //
 // Creates a table from data structed as an array of objects
 function createTable(data, tableID){
-	const table = document.querySelector(tableID);
+	const table = document.getElementById(tableID);
 
 	data.forEach(loan => {
+		console.log(loan);
 		//Create a row for every object
 		row = document.createElement("tr");
 		valueList = Object.values(loan);
+		console.log(valueList);
 		valueList.forEach(value => {
 			//Create a data cell for every object value
 			cell = document.createElement("td");

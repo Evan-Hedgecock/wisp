@@ -83,3 +83,12 @@
     <h4>Create a Budget!</h4>
 </div>
 {% endblock %}
+{% block scripts %}
+<script>
+	fetch('api/loan')
+		.then(response => response.json())
+		.then(data => createTable(data, "loanTable"))
+		.catch(error => console.error("Error fetching data: ", error));
+	console.log("Done fetching data");
+</script>
+{% endblock %}

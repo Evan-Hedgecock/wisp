@@ -6,6 +6,7 @@ defines the primary routes for the application.
 
 from database import Database
 from flask import Flask, redirect, render_template, request
+import json
 from loan import Loan
 
 # Configure app
@@ -53,3 +54,22 @@ def addLoan():
     else:
         print("Add loan form tried to get")
     return redirect("/")
+
+
+@app.route("/api/loan")
+def getLoans():
+    """Fetch all loan data from SQlite3 database.
+
+    Returns:
+        Data: In json format.
+    """
+    # Get loans from database
+    data = []
+    loans = db.get()
+    for loan in loans:
+        data.append(
+            dict(name=loan[1], balance=loan[2], interest=loan[3], percent=loan[4])
+        )
+    # Jsonify data and return
+    response = json.dumps(data)
+    return response
