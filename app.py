@@ -5,7 +5,7 @@ defines the primary routes for the application.
 """
 
 from database import Database
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, jsonify
 import json
 from loan import Loan
 
@@ -25,38 +25,43 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/add-loan", methods=["POST", "GET"])
+@app.route("/api/loan/addLoan", methods=["POST"])
 def addLoan():
     """Add a new loan to the SQLite3 database if valid.
 
-    Handles both GET and POST requests.
-    For POST requests, validates the input and saves the loan to the database.
+    Get's a loan object in json format. Loads the loan object and adds to database if valid.
 
     Returns:
         Response: Redirect to the home page.
     """
-    if request.method == "POST":
-        # Verify all form inputs
-        try:
-            fname = request.form["fname"]
-            if fname == "":
-                raise ValueError("Name cannot be empty")
-            fbalance = float(request.form["fbalance"])
-            finterest = float(request.form["finterest"])
-            fpercent = float(request.form["fpercent"])
-        except ValueError as e:
-            print(e)
-            return redirect("/")
-        # Create loan and add to sql database
-        loan = Loan(fname, fbalance, finterest, fpercent)
-        loan.save(db)
+    print("Add loan form submitted")
+    # Verify all form inputs
+    data = request.get_json()
+    print(data)
+    if not data:
+        response = {'error': 'Invalid data'}
+        return response, 400
+    if not data["name"]:
+        response = {'error': 'Invalid name'}
+        return response, 400
+    if not data["balance"]:
+        response = {'error': 'Invalid balance'}
+        return response, 400
+    if not data["interest"]:
+        response = {'error': 'Invalid interest'}
+        return response, 400
+    if not data["percent"]:
+        response = {'error': 'Invalid percent'}
+        return response, 400
+    # Create loan and add to sql database
+    loan = Loan(data["name"], data["balance"], data["interest"], data["percent"])
+    loan.save(db)
+    response = {'success': 'Loan added successfully'}
+    return jsonify(response), 201
+    
 
-    else:
-        print("Add loan form tried to get")
-    return redirect("/")
 
-
-@app.route("/api/loan")
+@app.route("/api/loan/getLoans")
 def getLoans():
     """Fetch all loan data from SQlite3 database.
 

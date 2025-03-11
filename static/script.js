@@ -19,10 +19,72 @@
 //    }
 //}
 //
-// Creates a table from data structed as an array of objects
-function createTable(data, tableID){
-	const table = document.getElementById(tableID);
 
+const addLoanForm = document.getElementById("addLoanForm");
+addLoanForm.addEventListener("submit", function(event) {
+	event.preventDefault();
+	addLoan();
+}
+);
+
+const loanTable = document.getElementById("loanTable");
+
+function addLoan() {
+	const fname = document.getElementById("fname").value;
+	if (fname === "") {
+		alert("Name missing");
+		return;
+	}
+	const fbalance = document.getElementById("fbalance").value;
+	if (fbalance === "" || isNaN(fbalance)) {
+		alert("Balance should be a number");
+		return;
+	}
+	const finterest = document.getElementById("finterest").value;
+	if (finterest === "" || isNaN(finterest)) {
+		alert("Interest should be a number");
+		return;
+	}
+	const fpercent = document.getElementById("fpercent").value;
+	if (fpercent === "" || isNaN(fpercent)) {
+		alert("Payment should be a number");
+		return;
+	}
+	const newLoan = {"name": fname, "balance": fbalance,
+					 "interest": finterest, "percent": fpercent
+	};
+	// Add loan to database
+	fetch('/api/loan/addLoan', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(newLoan)
+	})
+
+	// Add loan to table
+	row = document.createElement("tr");
+	valueList = Object.values(newLoan);
+	valueList.forEach(value => {
+		cell = document.createElement("td");
+		node = document.createTextNode(value);
+		cell.appendChild(node);
+		row.appendChild(cell);
+	});
+	loanTable.appendChild(row);
+
+	clearLoanForm();
+}
+
+function clearLoanForm() {
+	document.getElementById("fname").value = "";
+	document.getElementById("fbalance").value = "";
+	document.getElementById("finterest").value = "";
+	document.getElementById("fpercent").value = "";
+}
+
+// Creates a table from data structed as an array of objects
+function createTable(data){
 	data.forEach(loan => {
 		console.log(loan);
 		//Create a row for every object
@@ -36,9 +98,19 @@ function createTable(data, tableID){
 			cell.appendChild(node);
 			row.appendChild(cell);
 		});
-	table.appendChild(row);
+	loanTable.appendChild(row);
 	});
 }
+
+function fetchLoans(){
+	fetch('api/loan/getLoans')
+		.then(response => response.json())
+		.then(data => createTable(data))
+		.catch(error => console.error("Error fetching data: ", error));
+	console.log("Done fetching data");
+}
+
+fetchLoans();
 
 //function addLoan(event){
 //    const errors = []
