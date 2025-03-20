@@ -27,8 +27,7 @@
     </div>
 </div>
 
-<div class="large-container">
-    <div class="table-container">
+<div class="table-container">
     <table id="loanTable">
         <tr>
             <th>Loan</th>
@@ -37,49 +36,40 @@
             <th>Percent</th>
         </tr>
     </table>
-    </div>
 </div>
 {% endblock %}
 {% block bottom %}
-<div class="left-container">
+<div class="form-container">
     <div class="title">
         <h4>Add Loan</h4>
     </div>
-    <form id="addLoanForm">
-        <div class="top">
-            <div id="fname-container">
-                <input type="text" name="fname" id="fname" placeholder="Name">
-            </div>
-            <div id="fbalance-container">
-                <input type="text" name="fbalance" id="fbalance" placeholder="Balance">
-            </div>
+    <form id="addLoanForm" class="loan-form">
+        <div class="form-row">
+            <input type="text" name="fname" id="fname" placeholder="Name">
+            <input type="text" name="fbalance" id="fbalance" placeholder="Balance">
         </div>
-        <div class="bottom">
-            <div id="finterest-container">
+        <div class="form-row">
                 <input type="text" name="finterest" id="finterest" placeholder="Interest">
-            </div>
-            <div id="fpercent-container">
                 <input type="text" name="fpercent" id="fpercent" placeholder="Payment">
-            </div>
         </div>
         <input class="button" type="submit" value="CONFIRM">
     </form>
 </div>
-<div class="right-container">
+<div class="form-container">
     <div class="title">
         <h4>Make Payment</h4>
     </div>
-    <form action="#">
-        <div class="top">
+    <form action="#" class="loan-form">
+        <div class="form-row">
             <input type="text" placeholder="Loan">
         </div>
-        <div class="bottom">
+        <div class="form-row">
             <input type="text" placeholder="Payment">
         </div>
         <input class="button" type="submit" value="CONFIRM">
     </form>
 </div>
-<div class="middle-container">
+<button class="growing-button">
     <h4>Create a Budget!</h4>
-</div>
+</button>
 {% endblock %}
