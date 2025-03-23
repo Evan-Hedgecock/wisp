@@ -1,24 +1,6 @@
-//// Save to memory
-//function saveToLocal(data, key){
-//    currentData = loadFromLocal(key);
-//
-//    // If current data exists, add data to that list, otherwise create empty array
-//    currentData ? currentData.push(data) : currentData = [data];
-//    console.log("current data:", currentData);
-//    stringData = JSON.stringify(currentData);
-//    console.log("string data:", stringData);
-//
-//    localStorage.setItem(key, stringData);
-//}
-//
-//// Load from memory
-//function loadFromLocal(key){
-//    if (localStorage) {
-//        data = localStorage.getItem(key);
-//        return JSON.parse(data);
-//    }
-//}
-//
+// Dynamically adjust the class of navbar when user scrolls vs when it's at top of page
+const navbar = document.getElementById
+
 
 const addLoanForm = document.getElementById("addLoanForm");
 addLoanForm.addEventListener("submit", function(event) {
@@ -98,6 +80,15 @@ function createTable(data){
 			cell.appendChild(node);
 			row.appendChild(cell);
 		});
+		var cell = document.createElement("td");
+		var editContainer = document.createElement("div");
+		editContainer.className = "editContainer";
+		var editButton = document.createElement("button");
+		editButton.className = "edit";
+		editButton.innerHTML = "Edit";
+		editContainer.appendChild(editButton);
+		cell.appendChild(editContainer);
+		row.appendChild(cell);
 	loanTable.appendChild(row);
 	});
 }

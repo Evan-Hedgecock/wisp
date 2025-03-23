@@ -29,11 +29,19 @@
 
 <div class="table-container">
     <table id="loanTable">
+        <colgroup>
+            <col id="loanCol">
+            <col id="balanceCol">
+            <col id="AprCol">
+            <col id="interestCol">
+            <col id="edit">
+        </colgroup>
         <tr>
             <th>Loan</th>
             <th>Balance</th>
-            <th>Interest</th>
-            <th>Percent</th>
+            <th>APR</th>
+            <th>Monthly Interest</th>
+            <th>Edit</th>
         </tr>
     </table>
 </div>
@@ -45,12 +53,12 @@
     </div>
     <form id="addLoanForm" class="loan-form">
         <div class="form-row">
-            <input type="text" name="fname" id="fname" placeholder="Name">
-            <input type="text" name="fbalance" id="fbalance" placeholder="Balance">
+            <input type="text" name="fname" id="fname" placeholder="Name" autocomplete="off">
+            <input type="text" name="fprincipal" id="fprincipal" placeholder="Principal" autocomplete="off">
         </div>
         <div class="form-row">
-                <input type="text" name="finterest" id="finterest" placeholder="Interest">
-                <input type="text" name="fpercent" id="fpercent" placeholder="Payment">
+                <input type="text" name="fpercent" id="fpercent" placeholder="Percent" autocomplete="off">
+                <input type="text" name="finterest" id="finterest" placeholder="Interest" autocomplete="off">
         </div>
         <input class="button" type="submit" value="CONFIRM">
     </form>
@@ -61,10 +69,10 @@
     </div>
     <form action="#" class="loan-form">
         <div class="form-row">
-            <input type="text" placeholder="Loan">
+            <input type="text" placeholder="Loan" autocomplete="off">
         </div>
         <div class="form-row">
-            <input type="text" placeholder="Payment">
+            <input type="text" placeholder="Payment" autocomplete="off">
         </div>
         <input class="button" type="submit" value="CONFIRM">
     </form>

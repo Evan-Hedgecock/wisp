@@ -25,18 +25,19 @@ body {
 }
 
 
-.navbar {
+#navbar {
     width: auto;
     display: flex;
     background: white;
     padding: 10px;
-    margin: 10px;
-    border-radius: 20px;
+    height: 10vh;
+    /* margin: 10px; */
+    /* border-radius: 20px; */
     align-items: center;
     justify-content: space-between;
 }
 
-.navbar .logo {
+#navbar .logo {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -45,18 +46,18 @@ body {
     font-size: 32px;
 }
 
-.navbar .logo:hover {
+#navbar .logo:hover {
     cursor: pointer;
 }
 
-.navbar .logo i {
+#navbar .logo i {
     color: white;
     background: #6320EE;
     padding: 5px;
     border-radius: 50%;
 }
 
-.navbar .nav-links {
+#navbar .nav-links {
     display: flex;
     gap: 25px;
     font-family: "Montserrat", sans-serif;
@@ -64,7 +65,7 @@ body {
     font-size: 24px;
 }
 
-.navbar .settings {
+#navbar .settings {
     display: flex;
     gap: 20px;
     background: #6320EE;
@@ -74,7 +75,7 @@ body {
 
 }
 
-.navbar .settings >i {
+#navbar .settings >i {
     background: #6320EE;
     padding: 5px;
     border-radius: 50%;
@@ -84,13 +85,13 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.navbar .settings >i:hover {
+#navbar .settings >i:hover {
     color: #6320EE;
     background-color: white;
 }
 
 
-.navbar .settings .profile {
+#navbar .settings .profile {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -100,22 +101,22 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.navbar .settings .profile:hover {
+#navbar .settings .profile:hover {
     background: white;
     color: #6320EE;
 }
 
-.navbar .settings .profile:hover i {
+#navbar .settings .profile:hover i {
     color: #6320EE;
 }
 
-.navbar .settings .profile img {
+#navbar .settings .profile img {
     height:50px;
     width: 50px;
     border-radius: 50%;
 }
 
-.navbar .settings .profile i {
+#navbar .settings .profile i {
     color: white;
     font-size: 28px;
 }
@@ -125,7 +126,7 @@ body {
     display: flex;
     gap: 30px;
     width: 100%;
-    height: 60%;
+    height: 55vh;
     padding: 15px 30px;
 }
 
@@ -267,6 +268,10 @@ body {
     font-weight: 400;
 }
 
+#loanTable colgroup col {
+    width: 20%;
+}
+
 #loanTable tr {
     height: 75px;
 }
@@ -277,6 +282,19 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
+
+#loanTable .editContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loanTable .edit {
+    width: 50%;
+}
+
 
 #loanTable tr th {
     font-family: "Montserrat", sans-serif;
@@ -302,7 +320,7 @@ body {
     border-radius: 50px 0 0 50px;
 }
 
-#loanTable tr:nth-child(even) td:nth-child(4) {
+#loanTable tr:nth-child(even) td:nth-child(5) {
     border-radius: 0 50px 50px 0;
 }
 
@@ -359,9 +377,9 @@ body {
     gap: 20px;
 }
 
-.form-row input {
+.loan-form input[type=text] {
     background: #6320EE;
-    border: 1px solid #6320EE;
+    border: 4px solid #6320EE;
     padding: 10px 20px;
     color: rgb(255, 255, 255);
     border-radius: 50px;
@@ -370,19 +388,25 @@ body {
     height: 60px;
     font-size: 20px;
     font-family: "Roboto", sans-serif;
+    outline: none;
 }
 
-.form-row input:focus {
+.loan-form input[type=text]:focus {
     background: none;
     color: #6320EE;
+    box-shadow: 0px 4px 10px #6320EE80;
 }
 
-.form-row input::placeholder {
+.loan-form input[type=text]::placeholder {
     opacity: 1;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
+    color: white;
 }
 
+.loan-form input[type=text]:focus::placeholder {
+    color: #6320EE;
+}
 
 .loan-form .button {
     width: 175px;
@@ -496,7 +520,7 @@ body {
     .middle-container .side-container .additional {
         width: 100%;
         justify-content: center;
-        /* height: 80%; */
+        height: 15vh;
     }
 
     .middle-container {
@@ -508,7 +532,8 @@ body {
     }
 
     .bottom-container {
-        flex-flow: row wrap;
+        flex-flow: column wrap;
+        gap: 2vh;
         height: auto;
     }
 
@@ -517,13 +542,9 @@ body {
         width: 100%;
     }
 
-    .bottom-container .middle-container {
+    .bottom-container .growing-button {
         width: 100%;
-    }
-
-    .bottom-container .right-container {
-        width: 100%;
-        height: 400px;
+        height: 15vh;
     }
 
 }
@@ -552,16 +573,16 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    .navbar .settings > i {
+    #navbar .settings > i {
         visibility: collapse;
     }
 
-    .navbar .settings {
+    #navbar .settings {
         width: 70px;
         gap: 0;
     }
 
-    .navbar .settings .profile {
+    #navbar .settings .profile {
         gap: 0;
     }
 }
