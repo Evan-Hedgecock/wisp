@@ -1,6 +1,12 @@
 // Dynamically adjust the class of navbar when user scrolls vs when it's at top of page
 const navbar = document.getElementById
 
+// TODO: Change add loan form inputs:
+// Loan name: Required
+// Balance: Required, when blurred a popup should ask if you want to split it between principal and interest owed
+// APR: Required
+// Minimum Payment: Not required, if left blank then will be set to 0.
+// If minimum payment is 0, in the simulate payment the minimum payment will be assumed to be the monthly interest accrued
 
 const addLoanForm = document.getElementById("addLoanForm");
 addLoanForm.addEventListener("submit", function(event) {
